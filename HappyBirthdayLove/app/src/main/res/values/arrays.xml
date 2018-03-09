@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ourPictures">
+        <item>https://i.imgur.com/c6ot6qU.gif</item>
+        <item>https://i.imgur.com/c6ot6qU.gif</item>
+        <item>https://i.imgur.com/c6ot6qU.gif</item>
+        <item>https://i.imgur.com/c6ot6qU.gif</item>
+        <item>https://i.imgur.com/c6ot6qU.gif</item>
+
+    </string-array>
+
+</resources>
