@@ -14,23 +14,21 @@ import com.squareup.picasso.Picasso;
 
 public class MainActivity extends FragmentActivity {
 
-    public static final int NUM_PAGES = 5;
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
-    private String[] imageArray;
-
+    private TypedArray imageArray;
+    private String[] captionArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imageArray = getResources().getStringArray(R.array.ourPictures);
-
+        imageArray = getResources().obtainTypedArray(R.array.ourPictures);
+        captionArray = getResources().getStringArray(R.array.captions);
         mPager = findViewById(R.id.pager);
         mPagerAdapter = new ScreenSlidePageAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
-        ImageView imageView = findViewById(R.id.imageview);
-        Picasso.with(this).load(R.drawable.image1).into(imageView);
+
     }
 
     @Override
@@ -49,13 +47,14 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            String image = imageArray[position];
-            return ScreenSlidePageFragment.newInstance(image);
+            int imageId = imageArray.getResourceId(position,-1);
+            String caption = captionArray[position];
+            return ScreenSlidePageFragment.newInstance(imageId,caption);
         }
 
         @Override
         public int getCount() {
-            return NUM_PAGES;
+            return imageArray.length();
         }
     }
 }

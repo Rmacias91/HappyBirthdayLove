@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="ourPictures">
-        <item>https://i.imgur.com/c6ot6qU.gif</item>
-        <item>https://i.imgur.com/c6ot6qU.gif</item>
-        <item>https://i.imgur.com/c6ot6qU.gif</item>
-        <item>https://i.imgur.com/c6ot6qU.gif</item>
-        <item>https://i.imgur.com/c6ot6qU.gif</item>
+    <integer-array name="ourPictures">
+        <item>@drawable/image1</item>
+        <item>@drawable/image2</item>
+        <item>@drawable/image3</item>
+        <item>@drawable/image4</item>
+        <item>@drawable/image5</item>
+        <item>@drawable/image6</item>
+        <item>@drawable/image7</item>
+        <item>@drawable/image8</item>
+        <item>@drawable/image9</item>
+        <item>@drawable/image10</item>
+        <item>@drawable/image12</item>
+        <item>@drawable/image13</item>
+        <item>@drawable/image14</item>
+        <item>@drawable/image15</item>
+    </integer-array>
 
+    <string-array name="captions">
+        <item>Image1</item>
+        <item>Image2</item>
+        <item>Image3</item>
+        <item>Image4</item>
+        <item>Image5</item>
+        <item>Image6</item>
+        <item>Image7</item>
+        <item>Image8</item>
+        <item>Image9</item>
+        <item>Image10</item>
+        <item>Image12</item>
+        <item>Image13</item>
+        <item>Image14</item>
+        <item>Image15</item>
     </string-array>
 
+    <string-array name="quotes">
+        <item>Promise me you'll never forget me because if I thought you would, I'd never leave.</item>
+        
+    </string-array>
 </resources>
