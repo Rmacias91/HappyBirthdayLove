@@ -19,6 +19,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -43,7 +44,7 @@ public class MainActivity extends FragmentActivity {
         mPager = findViewById(R.id.pager);
         mPagerAdapter = new ScreenSlidePageAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
-
+        Toast.makeText(this,"====> Swipe for more :)",Toast.LENGTH_LONG).show();
         Intent musicIntent = new Intent(this,MusicService.class);
         bindService(musicIntent, mConnection, Context.BIND_AUTO_CREATE);
 

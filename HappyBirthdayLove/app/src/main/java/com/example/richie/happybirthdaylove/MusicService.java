@@ -34,7 +34,7 @@ public class MusicService extends Service {
         super.onCreate();
         AssetFileDescriptor afd = null;
         try {
-            afd = getAssets().openFd("rememberMe.mp3");
+            afd = getAssets().openFd("1234.mp3");
             player = new MediaPlayer();
             player.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
             player.prepare();
