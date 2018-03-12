@@ -34,7 +34,7 @@ public class MusicService extends Service {
         super.onCreate();
         AssetFileDescriptor afd = null;
         try {
-            afd = getAssets().openFd("1234.mp3");
+            afd = getAssets().openFd("cant_take_my_eyes.mp3");
             player = new MediaPlayer();
             player.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
             player.prepare();
@@ -53,7 +53,7 @@ public class MusicService extends Service {
         player.release();
     }
     public void startMusic() {
-        Log.d("service","Song from startMucis called");
+
         player.start();
     }
 
