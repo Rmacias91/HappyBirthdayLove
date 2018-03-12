@@ -56,12 +56,12 @@ public class ScreenSlidePageFragment extends Fragment{
         captionTV.setText(caption);
         captionTV.startAnimation(in);
         Picasso.with(getContext()).load(imageId).transform(new ImageRoundCorners()).into(imageContainer);
+        imageContainer.startAnimation(in);
 
         if(imageId==R.drawable.image11){
             final ImageView imageView = view.findViewById(R.id.tinderMatch);
             imageView.setVisibility(View.VISIBLE);
             imageView.setAnimation(in);
-            Toast.makeText(getContext(),R.string.message,Toast.LENGTH_SHORT).show();
 
             new CountDownTimer(5000, 1000) {
                 public void onTick(long millisUntilFinished) {

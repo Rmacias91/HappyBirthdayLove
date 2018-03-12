@@ -17,28 +17,41 @@
 
         <ImageView
             android:id="@+id/imageContainer"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:adjustViewBounds="true"
             android:layout_gravity="center_horizontal"
-            android:layout_weight=".9"
+            android:layout_weight=".95"
 
             />
-
-            <TextView
-                android:id="@+id/caption"
-                android:layout_width="wrap_content"
+            <ScrollView
+                android:id="@+id/SCROLLER_ID"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginStart="12dp"
-                android:layout_weight=".1"
-                android:fontFamily="@font/cagliostro"
-                android:padding="8dp"
-                android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:scrollbars="vertical"
+                android:layout_weight=".5"
+                android:fillViewport="true">
+
+    <TextView
+        android:id="@+id/caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="12dp"
+        android:paddingRight="12dp"
+
+        android:fontFamily="@font/cagliostro"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+            </ScrollView>
+
+
 
     </LinearLayout>
 

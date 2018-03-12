@@ -1,9 +1,14 @@
 package com.example.richie.happybirthdaylove;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.TypedArray;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
+import android.os.IBinder;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -11,6 +16,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -24,6 +30,8 @@ public class MainActivity extends FragmentActivity {
     private PagerAdapter mPagerAdapter;
     private TypedArray imageArray;
     private String[] captionArray;
+    private MusicService musicService;
+    private  boolean mBound = false;
 
 
     @Override
@@ -36,19 +44,8 @@ public class MainActivity extends FragmentActivity {
         mPagerAdapter = new ScreenSlidePageAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
 
-        AssetFileDescriptor afd = null;
-        try {
-            afd = getAssets().openFd("rememberMe.mp3");
-            MediaPlayer player = new MediaPlayer();
-            player.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
-            player.prepare();
-            player.setLooping(true);
-            player.start();
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Intent musicIntent = new Intent(this,MusicService.class);
+        bindService(musicIntent, mConnection, Context.BIND_AUTO_CREATE);
 
 
     }
@@ -77,4 +74,54 @@ public class MainActivity extends FragmentActivity {
             return imageArray.length();
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mBound) {
+            musicService.pauseMusic();
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(mConnection);
+        mBound = false;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(mBound){
+            musicService.startMusic();
+        }
+    }
+
+    private ServiceConnection mConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName className,
+                                       IBinder service) {
+            // We've bound to LocalService, cast the IBinder and get LocalService instance
+            MusicService.LocalBinder binder = (MusicService.LocalBinder) service;
+            musicService = binder.getService();
+            mBound = true;
+            musicService.startMusic();
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName arg0) {
+            mBound = false;
+        }
+    };
+
+
 }
+
+
