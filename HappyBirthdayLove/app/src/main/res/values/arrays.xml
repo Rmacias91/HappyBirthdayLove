@@ -1,41 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer-array name="ourPictures">
-        <item>@drawable/image1</item>
+        <item>@drawable/image11</item>
         <item>@drawable/image2</item>
         <item>@drawable/image3</item>
         <item>@drawable/image4</item>
+        <item>@drawable/image14</item>
         <item>@drawable/image5</item>
-        <item>@drawable/image6</item>
         <item>@drawable/image7</item>
         <item>@drawable/image8</item>
-        <item>@drawable/image9</item>
         <item>@drawable/image10</item>
         <item>@drawable/image12</item>
         <item>@drawable/image13</item>
-        <item>@drawable/image14</item>
         <item>@drawable/image15</item>
     </integer-array>
 
     <string-array name="captions">
-        <item>Image1</item>
-        <item>Image2</item>
-        <item>Image3</item>
-        <item>Image4</item>
-        <item>Image5</item>
-        <item>Image6</item>
-        <item>Image7</item>
-        <item>Image8</item>
-        <item>Image9</item>
-        <item>Image10</item>
-        <item>Image12</item>
-        <item>Image13</item>
-        <item>Image14</item>
-        <item>Image15</item>
+        <item>Cuban and Mexican. \n Masters in CS. \n Friends call me Richie.</item>
+        <item>Thanks for dancing with me on Halloween.</item>
+        <item>Thanks for going out with me after realizing I couldn\'t dance. </item>
+        <item>More importantly, thanks for dealing with my bad photography skills and sense of humor.</item>
+        <item>It was so hard to write this, my eyes kept watering!</item>
+        <item>I\'m grateful for meeting all your friends and introducing you to my own.</item>
+        <item>I enjoyed having a nice cuddle buddy this Winter with a nice butt.</item>
+        <item>Having a date to go out to eat yummy food with.</item>
+        <item>I even enjoyed being dragged out to things I never would do.</item>
+        <item>Te quiero no solo por como eres, sino por como soy yo cuando estoy contigo</item>
+        <item>Tardé una hora en conocerte y solo un día en enamorarme. Pero me llevará toda una vida lograr olvidarte.</item>
+        <item>Happy Birthday Lourdes!</item>
     </string-array>
 
-    <string-array name="quotes">
-        <item>Promise me you'll never forget me because if I thought you would, I'd never leave.</item>
-        
-    </string-array>
+
 </resources>

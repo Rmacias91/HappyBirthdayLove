@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v4.view.ViewPager
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+
+    <ImageView
+        android:id="@+id/tinderMatch"
+        android:visibility="invisible"
+        android:src="@drawable/match"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+<android.support.v4.view.ViewPager
+
     android:id="@+id/pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
+
+
+
+</FrameLayout>
 

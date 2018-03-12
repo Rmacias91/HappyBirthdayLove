@@ -1,14 +1,18 @@
 package com.example.richie.happybirthdaylove;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -46,9 +50,32 @@ public class ScreenSlidePageFragment extends Fragment{
         View view  = inflater.inflate(R.layout.fragment_slider_view, container, false);
         imageContainer = view.findViewById(R.id.imageContainer);
         captionTV = view.findViewById(R.id.caption);
+        final Animation in = new AlphaAnimation(0.0f, 1.0f);
+        final Animation out = new AlphaAnimation(1.0f, 0.0f);
+        in.setDuration(5000);
         captionTV.setText(caption);
-        Picasso.with(getContext()).load(imageId).into(imageContainer);
+        captionTV.startAnimation(in);
+        Picasso.with(getContext()).load(imageId).transform(new ImageRoundCorners()).into(imageContainer);
+
+        if(imageId==R.drawable.image11){
+            final ImageView imageView = view.findViewById(R.id.tinderMatch);
+            imageView.setVisibility(View.VISIBLE);
+            imageView.setAnimation(in);
+            Toast.makeText(getContext(),R.string.message,Toast.LENGTH_SHORT).show();
+
+            new CountDownTimer(5000, 1000) {
+                public void onTick(long millisUntilFinished) {
+                }
+                public void onFinish() {
+                    imageView.setVisibility(View.INVISIBLE);
+                    imageView.setAnimation(out);
+                }
+            }.start();
+
+        }
+
         return view;
 
     }
+
 }
