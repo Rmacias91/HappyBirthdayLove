@@ -24,7 +24,7 @@ public class MainActivity extends FragmentActivity {
     private PagerAdapter mPagerAdapter;
     private TypedArray imageArray;
     private String[] captionArray;
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
