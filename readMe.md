@@ -3,3 +3,7 @@ my eyes off of you" By Frankie Valli and the 4 seasons. Just used a Page Viewer/
 to keep the music playing in the background. Images and music is stored locally, which probably wasn't the best idea since my girlfriend
 has no space on her phone. The app takes about 20mb. I wanted the ability to use the app whenever she wanted though, so I stored everything
 in the app.
+<p align = "center">
+  
+<img src="https://github.com/Rmacias91/HappyBirthdayLove/blob/master/Lourdes/screenshot.JPG" alt="ClassDiagram" width="60%"/>
+</p>
